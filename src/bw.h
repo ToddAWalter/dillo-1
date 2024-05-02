@@ -57,6 +57,9 @@ typedef struct {
    /** HTML-bugs detected at parse time */
    int num_page_bugs;
    Dstr *page_bugs;
+
+   /* Zoom factor */
+   double zoom;
 } BrowserWindow;
 
 

@@ -2,6 +2,7 @@
  * File: ui.cc
  *
  * Copyright (C) 2005-2007 Jorge Arellano Cid <jcid@dillo.org>
+ * Copyright (C) 2024 Rodrigo Arias Mallo <rodarima@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -736,6 +737,12 @@ int UI::handle(int event)
          ret = 1;
       } else if (cmd == KEYS_FORWARD) {
          a_UIcmd_forw(a_UIcmd_get_bw_by_widget(this));
+         ret = 1;
+      } else if (cmd == KEYS_ZOOM_IN) {
+         a_UIcmd_zoom_in(a_UIcmd_get_bw_by_widget(this));
+         ret = 1;
+      } else if (cmd == KEYS_ZOOM_OUT) {
+         a_UIcmd_zoom_out(a_UIcmd_get_bw_by_widget(this));
          ret = 1;
       } else if (cmd == KEYS_BOOKMARKS) {
          a_UIcmd_book(a_UIcmd_get_bw_by_widget(this));

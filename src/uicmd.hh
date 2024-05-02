@@ -21,6 +21,8 @@ void a_UIcmd_back_popup(void *vbw, int x, int y);
 void a_UIcmd_forw(void *vbw);
 void a_UIcmd_forw_popup(void *vbw, int x, int y);
 void a_UIcmd_home(void *vbw);
+void a_UIcmd_zoom_in(void *vbw);
+void a_UIcmd_zoom_out(void *vbw);
 void a_UIcmd_reload(void *vbw);
 void a_UIcmd_repush(void *vbw);
 void a_UIcmd_redirection0(void *vbw, const DilloUrl *url);

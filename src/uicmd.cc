@@ -873,6 +873,38 @@ void a_UIcmd_redirection0(void *vbw, const DilloUrl *url)
 }
 
 /*
+ * Zoom in
+ */
+void a_UIcmd_zoom_in(void *vbw)
+{
+   BrowserWindow *bw = (BrowserWindow*) vbw;
+   bw->zoom += 0.10;
+
+   if (bw->zoom > 10.0)
+      bw->zoom = 10.0;
+
+   prefs.zoom_factor = bw->zoom;
+
+   a_Nav_repush((BrowserWindow*)vbw);
+}
+
+/*
+ * Zoom out
+ */
+void a_UIcmd_zoom_out(void *vbw)
+{
+   BrowserWindow *bw = (BrowserWindow*) vbw;
+   bw->zoom -= 0.10;
+
+   if (bw->zoom < 0.10)
+      bw->zoom = 0.10;
+
+   prefs.zoom_factor = bw->zoom;
+
+   a_Nav_repush((BrowserWindow*)vbw);
+}
+
+/*
  * Return a suitable filename for a given URL path.
  */
 static char *UIcmd_make_save_filename(const DilloUrl *url)
